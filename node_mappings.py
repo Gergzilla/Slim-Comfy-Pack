@@ -1,4 +1,5 @@
 try:
+    from .nodes.nodes_misc import *
     from .nodes.nodes_aspect_ratio import *
     from .nodes.nodes_lora import *
 
@@ -7,6 +8,8 @@ except ImportError:
 
 
 NODE_CLASS_MAPPINGS = { 
+    ### Misc Nodes
+    "SC Seed": SC_Seed,
     ### Aspect Ratio Nodes
     "SC SD1.5 Aspect Ratio": SC_AspectRatioSD15,
     "SC SDXL Aspect Ratio": SC_SDXLAspectRatio,
@@ -18,6 +21,8 @@ NODE_CLASS_MAPPINGS = {
     }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
+    ### Misc Nodes
+    "SC Seed": "SC Seed",
     ### Aspect Ratio Nodes
     "SC SD1.5 Aspect Ratio": "SC SD1.5 Aspect Ratio",
     "SC SDXL Aspect Ratio": "SC SDXL Aspect Ratio",    
