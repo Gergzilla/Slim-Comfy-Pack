@@ -5,7 +5,7 @@ import comfy.utils
 import folder_paths
 import hashlib
 from random import random, uniform
-from ..categories import icons
+# from ..categories import icons
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "comfy"))
 
@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "co
 # LoRA Nodes
 #---------------------------------------------------------------------------------------------------------------------#
 # This is a load lora node with an added switch to turn on or off.  On will add the lora and off will skip the node.
-class CR_LoraLoader:
+class SC_LoraLoader:
     def __init__(self):
         self.loaded_lora = None
 
@@ -33,7 +33,7 @@ class CR_LoraLoader:
     RETURN_TYPES = ("MODEL", "CLIP", "STRING", )
     RETURN_NAMES = ("MODEL", "CLIP", "show_help", )
     FUNCTION = "load_lora"
-    CATEGORY = icons.get("Comfyroll/LoRA")
+    CATEGORY = "Slim-Comfy/LoRA"
 
     def load_lora(self, model, clip, switch, lora_name, strength_model, strength_clip):
         show_help = "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki/LoRA-Nodes#cr-load-lora"
@@ -61,7 +61,7 @@ class CR_LoraLoader:
 #---------------------------------------------------------------------------------------------------------------------#
 # Based on Efficiency Nodes
 # This is a lora stack where a single node has 3 different loras each with their own switch
-class CR_LoRAStack:
+class SC_LoRAStack:
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -89,7 +89,7 @@ class CR_LoRAStack:
     RETURN_TYPES = ("LORA_STACK", "STRING", )
     RETURN_NAMES = ("LORA_STACK", "show_help", )
     FUNCTION = "lora_stacker"
-    CATEGORY = icons.get("Comfyroll/LoRA")
+    CATEGORY = "Slim-Comfy/LoRA"
 
     def lora_stacker(self, lora_name_1, model_weight_1, clip_weight_1, switch_1, lora_name_2, model_weight_2, clip_weight_2, switch_2, lora_name_3, model_weight_3, clip_weight_3, switch_3, lora_stack=None):
 
@@ -114,7 +114,7 @@ class CR_LoRAStack:
 
 #---------------------------------------------------------------------------------------------------------------------#
 # This applies the lora stack.
-class CR_ApplyLoRAStack:
+class SC_ApplyLoRAStack:
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -127,7 +127,7 @@ class CR_ApplyLoRAStack:
     RETURN_TYPES = ("MODEL", "CLIP", "STRING", )
     RETURN_NAMES = ("MODEL", "CLIP", "show_help", )
     FUNCTION = "apply_lora_stack"
-    CATEGORY = icons.get("Comfyroll/LoRA")
+    CATEGORY = "Slim-Comfy/LoRA"
 
     def apply_lora_stack(self, model, clip, lora_stack=None,):
         show_help = "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki/LoRA-Nodes#cr-apply-lora-stack"
