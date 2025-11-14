@@ -108,7 +108,7 @@ class SC_LoRAStack:
         if lora_name_3 != "None" and  switch_3 == "On":
             lora_list.extend([(lora_name_3, model_weight_3, clip_weight_3)]),
            
-        show_help = "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki/LoRA-Nodes#cr-lora-stack"           
+        show_help = "No help available at this time"           
 
         return (lora_list, show_help, )
 
