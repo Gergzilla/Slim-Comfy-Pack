@@ -36,7 +36,7 @@ class SC_LoraLoader:
     CATEGORY = "Slim-Comfy/LoRA"
 
     def load_lora(self, model, clip, switch, lora_name, strength_model, strength_clip):
-        show_help = "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki/LoRA-Nodes#cr-load-lora"
+        show_help = "No help available at this time"
         if strength_model == 0 and strength_clip == 0:
             return (model, clip, show_help, )
 
@@ -130,7 +130,7 @@ class SC_ApplyLoRAStack:
     CATEGORY = "Slim-Comfy/LoRA"
 
     def apply_lora_stack(self, model, clip, lora_stack=None,):
-        show_help = "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki/LoRA-Nodes#cr-apply-lora-stack"
+        show_help = "No help available at this time"
 
         # Initialise the list
         lora_params = list()
